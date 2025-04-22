@@ -57,7 +57,7 @@ body {
     background-color: #4CAF50; /* Green */
     border: none;
     border-bottom: solid 4px #3e8e41;
-    color: #F2EFE9;
+    color: #F9F6EE;
     padding: 15px 50px;
     text-align: center;
     text-decoration: none;
@@ -78,15 +78,15 @@ body {
 }   
 
 .white {
-    background-color: #F2EFE9;
+    background-color: #F9F6EE;
     border-color: #252627;
     color: #252627;
 }
 
 .black {
     background-color: #252627;
-    border-color: #F2EFE9;
-    color: #F2EFE9;
+    border-color: #F9F6EE;
+    color: #F9F6EE;
 }
 
 #results {
