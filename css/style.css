@@ -5,7 +5,9 @@ body {
 
 .container {
     justify-content: center;
+    max-width: 1024px;
     height: 100vh;
+    margin: auto;
 }
 
 .title {
@@ -18,7 +20,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     margin: auto;
-    width: 90vw;
+    width: 90%;
     justify-content: center;
 }
 
@@ -50,6 +52,7 @@ body {
     justify-content: center;
     margin-top: 2vh;
 }
+
 .button {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -90,7 +93,7 @@ body {
     display: grid;
     grid-template-columns: auto auto auto auto;
     gap: 10px;
-    font-size: 1.5em;
+    font-size: 2em;
     font-family: "Roboto Mono", monospace;
     font-optical-sizing: auto;
 }
@@ -115,8 +118,8 @@ body {
 span.white, span.black{
     display: inline-block;
     text-align: center;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border-style: solid;
     border-width: 2px;
     border-radius: 3px; 
@@ -129,4 +132,16 @@ span.white, span.black{
     font-weight: 900;
     font-style: italic;
     line-height: 50%;
+}
+
+@media (max-width: 510px)
+{
+    #results {
+        font-size: 1.2em;
+    }
+
+    span.white, span.black {
+        width: 20px;
+        height: 20px;
+    }
 }
