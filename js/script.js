@@ -1,7 +1,7 @@
 const DICE = [
-    new Die(1, "white"),
+    new Die(6, "white"),
     new Die(2, "white"),
-    new Die(3, "white"),
+    new Die(5, "white"),
     new Die(4, "white"),
     new Die(5, "black"),
 ];
@@ -49,7 +49,7 @@ for (let i = 0; i < DICE_ELEMENTS.length; i++) {
     element.innerHTML = DICE[i].value;
 }
 
-generatePairs();
+// generatePairs();
 
 function onPress() {
     console.log("Button pressed!");
