@@ -51,7 +51,7 @@ for (let i = 0; i < DICE_ELEMENTS.length; i++) {
 
 // generatePairs();
 
-function onPress() {
+function onRollButtonClicked() {
     console.log("Button pressed!");
     for (var i = 0; i < DICE.length; i++) {
         var child = DICE_ELEMENTS[i];
