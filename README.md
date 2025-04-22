@@ -1,5 +1,5 @@
-# Dungeons, Dice & Danger
-## Dice Roller
+# Dungeons, Dice & Danger - Dice Roller
+Dice roller for the game *Dungeons, Dice & Danger*
 
 ### Overview
 *Dungeons, Dice & Danger* is a roll-and-write game where you explore dungeons for treasure and fight monsters.
