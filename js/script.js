@@ -42,19 +42,94 @@ const PAIRS = [
 
 const HOLDER = document.getElementById("dice-holder");
 const DICE_ELEMENTS = HOLDER.children;
-const RESULT_HOLDER = document.getElementById("results")
+const RESULT_HOLDER = document.getElementById("results");
+var inputIndex = 0;
+var inputActive = false;
 
 for (let i = 0; i < DICE_ELEMENTS.length; i++) {
-    const element = DICE_ELEMENTS[i];
-    element.innerHTML = DICE[i].value;
+    setDie(i, DICE[i].value);
+}
+
+document.addEventListener('keydown', function(event) {
+    if (!inputActive) {
+        if (event.key == 'Enter') {
+            onDieClicked(inputIndex);
+        }
+        return;
+    }
+
+    switch (event.key) {
+        case '1':
+            setDie(inputIndex, 1);
+            generatePairs();
+            onDieClicked((inputIndex + 1) % 5);
+            break;
+        case '2':
+            setDie(inputIndex, 2);
+            generatePairs();
+            onDieClicked((inputIndex + 1) % 5);
+            break;
+        case '3':
+            setDie(inputIndex, 3);
+            generatePairs();
+            onDieClicked((inputIndex + 1) % 5);
+            break;
+        case '4':
+            setDie(inputIndex, 4);
+            generatePairs();
+            onDieClicked((inputIndex + 1) % 5);
+            break;
+        case '5':
+            setDie(inputIndex, 5);
+            generatePairs();
+            onDieClicked((inputIndex + 1) % 5);
+            break;
+        case '6':
+            setDie(inputIndex, 6);
+            generatePairs();
+            onDieClicked((inputIndex + 1) % 5);
+            break;
+        case 'ArrowLeft':
+            onDieClicked((inputIndex + 4) % 5);
+            break;
+        case 'ArrowRight':
+            onDieClicked((inputIndex + 1) % 5);
+            break;
+        case 'Enter':
+            inputActive = false;
+            for (var i = 0; i < DICE.length; i++) {
+                DICE_ELEMENTS[i].classList.remove("input");
+            }
+        default:
+            break;
+    }
+});
+
+function setDie(index, value) {
+    DICE[index].value = value;
+    const element = DICE_ELEMENTS[index];
+    element.innerHTML = DICE[index].value;
+}
+
+function onDieClicked(index) {
+    DICE_ELEMENTS[inputIndex].classList.remove("input");
+    DICE_ELEMENTS[index].classList.add("input");
+    inputIndex = index;
+    inputActive = true;
 }
 
 // generatePairs();
 
 function onRollButtonClicked() {
     console.log("Button pressed!");
+    rollAllDice();
+}
+
+function rollAllDice() {
+    inputActive = false;
     for (var i = 0; i < DICE.length; i++) {
         var child = DICE_ELEMENTS[i];
+        child.classList.remove("input");
         startRoll(DICE[i], child);
     }
     setTimeout(generatePairs, 1100); // Wait for the rolling effect to finish before calculating the total
@@ -85,15 +160,7 @@ function generatePairs() {
         if (i == 3) {
             RESULT_HOLDER.appendChild(ACTIVE); 
         }
-        // var newColumn = i % 3 === 0;
-        // if (newColumn) {
-        //     var colDiv = document.createElement("div");
-        //     colDiv.classList.add("column")
-        //     RESULT_HOLDER.appendChild(colDiv);
-        //     var header = document.createElement("p");
-        //     header.innerText = i === 0 ? 'Passive:' : i === 3 ? 'Active:' : '-';
-        //     RESULT_HOLDER.lastChild.appendChild(header);
-        // }
+
         RESULT_HOLDER.appendChild(pairToElement(pair));
     }
 }

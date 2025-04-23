@@ -24,11 +24,11 @@
 				<h2>Dice Roller</h2>
 			</div>
 			<div id="dice-holder">
-				<div class="dice white">6</div>
-				<div class="dice white">2</div>
-				<div class="dice white">5</div>
-				<div class="dice white">4</div>
-				<div class="dice black">5</div>
+				<div class="dice white" onclick="onDieClicked(0)">6</div>
+				<div class="dice white" onclick="onDieClicked(1)">2</div>
+				<div class="dice white" onclick="onDieClicked(2)">5</div>
+				<div class="dice white" onclick="onDieClicked(3)">4</div>
+				<div class="dice black" onclick="onDieClicked(4)">5</div>
 			</div>
 			<div class="controls">
 				<button id="roll-button" class="button" onclick="onRollButtonClicked()">Roll</button>
